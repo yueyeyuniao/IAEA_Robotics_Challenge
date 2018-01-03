@@ -104,7 +104,7 @@ else if (direction == -1){
 	ROS_INFO("right");
 }
 
-	cout << "case3counter"<< case3counter <<endl;
+	std::cout << "case3counter"<< case3counter <<std::endl;
 
 if (case3counter == 5) 
 {	
