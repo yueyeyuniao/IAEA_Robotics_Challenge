@@ -1,0 +1,2 @@
+anna_IAEA:dem_wall_following:iaeatask1:iaeatask2:river_iaea:simple_navigation_goals
+-DCATKIN_DEVEL_PREFIX=/home/pengchang/IAEA_workspace/devel -DCMAKE_INSTALL_PREFIX=/home/pengchang/IAEA_workspace/install -G Unix Makefiles

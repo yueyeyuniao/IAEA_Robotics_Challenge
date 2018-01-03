@@ -1,0 +1,8 @@
+prefix=/home/pengchang/IAEA_workspace/install
+
+Name: save_detected_object
+Description: Description of save_detected_object
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pengchang/IAEA_workspace/install/lib 
+Requires: 

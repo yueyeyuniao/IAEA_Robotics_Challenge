@@ -1,0 +1,8 @@
+prefix=/home/pengchang/IAEA_workspace/devel
+
+Name: dem_wall_following
+Description: Description of dem_wall_following
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pengchang/IAEA_workspace/devel/lib 
+Requires: 

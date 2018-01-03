@@ -1,0 +1,46 @@
+controller_frequency: 1.0
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+  max_vel_x: 0.5 #0.3  # 0.5
+  min_vel_x: -0.1 # 0.0
+
+  max_vel_y: 0.0  # diff drive robot
+  min_vel_y: 0.0  # diff drive robot
+
+  max_trans_vel: 0.5
+  min_trans_vel: -0.1
+
+  max_rot_vel: 1.57 # 1.0
+  min_rot_vel: -1.57  # could set this lower
+
+
+  acc_lim_x: 10.0
+  acc_lim_th: 20.0 # 1.0 
+  acc_lim_y:  0.0     # diff drive robot
+
+
+# Goal Tolerance Parameters
+  yaw_goal_tolerance: 0.05  # 0.05
+  xy_goal_tolerance: 0.15  # 0.10
+  latch_xy_goal_tolerance: false
+
+# Forward Simulation Parameters
+  sim_time: 1.0       # 1.7
+  vx_samples: 20       # 3
+  vy_samples: 1       # diff drive robot
+  vtheta_samples: 20  # 20
+  meter_scoring: true
+  penalize_negative_x: false
+
+# Oscillation Prevention Parameters
+  oscillation_reset_dist: 0.05  # 0.05   - how far to travel before resetting oscillation flags
+
+# Debugging
+  publish_traj_pc : true
+  publish_cost_grid_pc: true
+  global_frame_id: map
+
+
+# Differential-drive robot configuration - necessary?
+  holonomic_robot: false

@@ -1,0 +1,8 @@
+prefix=/home/pengchang/IAEA_workspace/install
+
+Name: iaeatask1
+Description: Description of iaeatask1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pengchang/IAEA_workspace/install/lib 
+Requires: 

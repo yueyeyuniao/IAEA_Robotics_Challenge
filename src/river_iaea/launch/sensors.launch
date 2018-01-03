@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- launch lidar and publish tf transform -->
+    <arg name="raw_scan" default="0" />
+    <node pkg="urg_node" type="urg_node" name="laser" >
+        <param name="frame_id" value="/laser" />
+        <param name="angle_min" value="-1.57" />
+        <param name="angle_max" value="1.57" />
+        <!--param name="serial_port" value="/dev/robot/hokuyo_H1002787" /-->
+        <param name="error_limit" value="1" />
+
+        <remap if="$(arg raw_scan)"     from="/scan" to="~raw_scan" />
+        <remap unless="$(arg raw_scan)" from="/scan" to="~scan" />
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" 
+        name="base_link_to_laser" 
+        args="0.26 0.0 0.26 0.0 0.0 0.0 /base_link /laser 100" />
+
+<!-- launch camera and publish tf transform -->
+    <include file="$(find openni2_launch)/launch/openni2.launch"/>
+
+    <node pkg="tf" type="static_transform_publisher" 
+        name="base_link_to_camera" 
+        args="0.21 0.0 0.36 0.0 0.0 0.0 /base_link /camera_link 100" />
+
+
+
+</launch>
+

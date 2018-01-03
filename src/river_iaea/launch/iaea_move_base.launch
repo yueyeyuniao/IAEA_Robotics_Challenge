@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- ROS navigation stack move_base -->
+  <remap from="scan"             to="/laser/scan"/>  <!-- see costmap_common_params_2d.yaml -->
+  <remap from="map"              to="/rtabmap/proj_map"/>   <!-- see global_costmap_params.yaml -->
+  <remap from="odom"             to="/odometry/filtered" />
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find river_iaea)/nav_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find river_iaea)/nav_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find river_iaea)/nav_params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find river_iaea)/nav_params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find river_iaea)/nav_params/base_local_planner_params.yaml" command="load" />
+  </node>
+        
+
+</launch>
+
+
